@@ -10,8 +10,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HomeModule } from './modules/home/home.module';
+
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { SharedModule } from './modules/shared/shared.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -21,13 +22,15 @@ export function createTranslateLoader(http: HttpClient) {
     AppComponent,
     PageNotFoundComponent,
     AppComponent,
-    PageNotFoundComponent
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    SharedModule,
     NgxSpinnerModule.forRoot(),
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
