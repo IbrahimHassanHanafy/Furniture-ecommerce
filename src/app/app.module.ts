@@ -20,27 +20,12 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     PageNotFoundComponent
+    AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    HomeModule,
-    AppRoutingModule,
-    NgbModule,
-    HttpClientModule,
-    NgxSpinnerModule.forRoot(),
-    ToastrModule.forRoot(),
-    BrowserAnimationsModule,
-    TranslateModule.forRoot({
-      defaultLanguage: 'en',
-      loader: {
-          provide: TranslateLoader,
-          useFactory: (createTranslateLoader),
-          deps: [HttpClient]
-      }
-  })
-
-    
-
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
